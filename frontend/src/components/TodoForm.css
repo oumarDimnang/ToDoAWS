@@ -1,0 +1,42 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.todo-input {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+.todo-submit {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.todo-submit:hover {
+  background: #357abd;
+}
+
+.todo-submit:active {
+  transform: scale(0.98);
+}
