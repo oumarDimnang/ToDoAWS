@@ -25,18 +25,17 @@ mongoose
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
-// Routes
-app.use("/api/todos", require("./routes/todoRoutes"));
+// Health check routes - MUST come before /api/todos
+app.get("/", (req, res) => {
+  res.json({ message: "Todo API is running" });
+});
 
-// Health check route for /api path
 app.get("/api", (req, res) => {
   res.json({ message: "Todo API is running" });
 });
 
-// Health check route
-app.get("/", (req, res) => {
-  res.json({ message: "Todo API is running" });
-});
+// API Routes - comes after specific routes
+app.use("/api/todos", require("./routes/todoRoutes"));
 
 const PORT = process.env.PORT || 5000;
 const HOST = "0.0.0.0";
