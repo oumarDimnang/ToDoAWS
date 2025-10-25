@@ -28,6 +28,11 @@ mongoose
 // Routes
 app.use("/api/todos", require("./routes/todoRoutes"));
 
+// Health check route for /api path
+app.get("/api", (req, res) => {
+  res.json({ message: "Todo API is running" });
+});
+
 // Health check route
 app.get("/", (req, res) => {
   res.json({ message: "Todo API is running" });
